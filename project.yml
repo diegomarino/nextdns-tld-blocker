@@ -1,0 +1,25 @@
+parameters: {}
+environment: {}
+packages:
+  - name: nextdns
+    shared: false
+    environment: {}
+    parameters: {}
+    annotations: {}
+    functions:
+      - name: blocker
+        binary: false
+        main: ""
+        runtime: nodejs:18
+        web: true
+        webSecure: false
+        parameters: {}
+        environment:
+          NEXTDNS_API_TOKEN: "${NEXTDNS_API_TOKEN}"
+          NEXTDNS_PROFILE_ID: "${NEXTDNS_PROFILE_ID}"
+          BLOCKED_TLDS: "${BLOCKED_TLDS}"
+          BLOCK_TLDS_DAYS_PERIOD: "${BLOCK_TLDS_DAYS_PERIOD}"
+          BLOCK_TLDS_HOURS_PERIOD: "${BLOCK_TLDS_HOURS_PERIOD}"
+          TIMEZONE: "${TIMEZONE}"
+        annotations: {}
+        limits: {}
