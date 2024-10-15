@@ -50,6 +50,7 @@ export const main = async (args) => {
      */
     async function blockTLD(tld) {
       try {
+        // TODO: Check if the TLD is already blocked
         await axios.post(
           `https://api.nextdns.io/profiles/${PROFILE_ID}/security/tlds`,
           { id: tld },
@@ -72,6 +73,7 @@ export const main = async (args) => {
      */
     async function unblockTLD(tld) {
       try {
+        // TODO: Check if the TLD is already unblocked
         await axios.delete(
           `https://api.nextdns.io/profiles/${PROFILE_ID}/security/tlds/${tld}`,
           {
